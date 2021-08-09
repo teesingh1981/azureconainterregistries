@@ -1,0 +1,27 @@
+### USEFUL AZURE CONTAINER REGISTRY COMMANDS ####
+
+# 1. Log-on to the ACR: 
+
+# az acr login --name <acr name>.azurecr.io --expose-token
+
+# 2. Use token variable:
+
+# TOKEN=$(az acr login --name <acr name>.azurecr.io --expose-token --output tsv --query accessToken)
+
+# 3. Docker pull example: 
+
+# docker pull mcr.microsoft.com/hello-world
+
+# 4. Docker tag example:
+
+# docker tag mcr.microsoft.com/hello-world <acr name>/hello-world:v1
+
+# 5. Docker push to registry: 
+
+# docker push <acr name>.azurecr.io/hello-world:v1
+
+# 6. Get list of images in acr:
+
+# az acr repository list --name <acr name>.azurecr.io --output table
+
+# docker run <acr name>.azurecr.io/hello-world:v1
